@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/*
+Theme Name: akinablog
+Theme URI:
+Description: blog
+Author: Akina Yamada
+Author URI:
+Version: 1.0
+*/
+$main-color-gray:#f5efef;
+$main-color-orange:#EF866B;
+$letter:rgb(100, 97, 97);
+
+body{
+    margin: 0;
+}
+
+#container {
+    margin: 0 auto;
+    width:100%;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+}
+/* header */
+header{
+    position: relative;
+    width: 100%;
+    background: url("./img/mountains.JPG");
+    background-size: cover;
+    background-position: center bottom 43%;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: black;
+        opacity: .5;
+        display: block;
+    }
+    a{
+        color:white;
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
+        p{
+            margin-top: .5rem;
+        }
+        @media screen and (min-width:769px){//PC
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+    @media screen and (max-width:768px){//SP
+        a{
+            font-size: 3rem;
+        }
+        p{
+            font-size: .9rem;
+        }
+    }
+
+    @media screen and (min-width:769px){//PC
+        min-height: 40vh;
+    }
+    @media screen and (max-width:768px){//SP
+        height: 250px;
+    }
+}
+//パンくずリスト
+@media screen and (min-width:769px){//PC
+    .breadcrumbs{
+        padding-top: 1rem;
+        margin-left: 1rem;
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width:768px){//SP
+    .breadcrumbs{
+        display: none;
+    }
+}
+.title{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-bottom: none;
+    text-decoration: none;
+}
+@media screen and (min-width:769px){//PC
+    .title{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-bottom: none;
+        text-decoration: none;
+    }
+}
+@media screen and (max-width:768px){//SP
+    .title{
+        top: 75%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-bottom: none;
+        text-decoration: none;
+    }
+}
+/* navbar */
+nav{
+    position: absolute;
+    font-size: 1.2rem;
+    button{
+        color: white;
+        z-index: 2;
+    }
+    @media screen and (max-width:768px){//SP
+        a{
+            font-size: 1.3rem;
+        }
+    }
+}
+// index page
+#indexPosts{
+    margin: 0 auto;
+    @media screen and (min-width:769px){//PC
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .article-title{
+        text-decoration: none;
+        color: $letter;
+    }
+    .index-post{
+        width: 100%;
+        border: $main-color-gray 1px solid;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+    .thumbnail{
+        height: auto;
+        width: 100%;
+    }
+    @media screen and (min-width:769px){//PC
+        main{
+            width: 65%;
+        }
+        .index-post{
+            margin-top: 3rem;
+        }
+        aside{
+            width: 30%;
+            margin-top: 3rem;
+            li{
+                list-style: none;
+            }
+        }
+    }
+    @media screen and (max-width:768px){//SP
+        main{
+            margin: 0 auto;
+            width: 90%;
+        }
+        .index-post{
+            margin-top: 1rem;
+        }
+        .thumbnail{
+            height: auto;
+        }
+        aside{
+            display: none;
+        }
+    }
+}
+​
+// single page
+.category-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.singlePostTitle{
+    text-align: center;
+    padding: 1rem;
+    h2{
+        font-size: 1.7rem;
+        margin-top: 8px;
+    }
+}
+.wp-block-image{
+    text-align: center;
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+.singlePostTitle, .category-name{
+    margin-top: 1rem;
+    background: $main-color-gray;
+    p{
+        margin-bottom: 0;
+    }
+    figcaption{
+        font-size: 12px;
+        color: #666;
+    }
+}
+.single-post{
+    width: 100%;
+    color:#333;
+    p{
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1.2px;
+    }
+    ul{
+        margin-bottom: 2rem;
+        li{
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            letter-spacing: 1.2px;
+        }
+    }
+}
+@media screen and (min-width:769px){//PC
+    .category-name{
+        height: 5rem;
+    }
+​
+    .singlePostTitle, .category-name{
+        p{
+            margin-bottom: 0;
+        }
+        .category{
+            font-size: 1.5rem;
+        }
+    }
+    .single-post{
+        width: 100%;
+        margin-top: 3rem;
+    }
+}
+@media screen and (max-width:768px){//SP
+    .category-name{
+        height: 4rem;
+    }
+    .singlePostTitle, .category-name{
+        p{
+            margin-bottom: 0;
+        }
+        .category{
+            font-size: 1.2rem;
+        }
+    }
+    .single-post{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+//sns share buttons
+.fa-hatena:before {
+    font-family: Verdana;
+    font-weight: bold;
+    content: 'B!';
+}
+
+.share {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 3em;
+}
+
+.share ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.share ul:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.share li {
+    float: left;
+    width: 25%;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.share li a {
+    font-size: 14px;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1px;
+}
+
+.share li a:hover {
+    opacity: .8;
+}
+
+.share li a:visited {
+    color: #fff;
+}
+
+.tweet a {
+    background-color: #55acee;
+}
+
+.facebooklink a {
+    background-color: #315096;
+}
+
+.line a {
+    background-color: #00b900;
+}
+
+.hatena a {
+    background-color: #008fde;
+}
+//フッター
+footer{
+    background: $main-color-gray;
+    margin-top: 2rem;
+    li{
+        list-style: none;
+    }
+    .fixed-page{
+        padding: 1rem;
+        width: 80%;
+        margin: 0 auto;
+        a{
+            color: black;
+            &:hover{
+                color: black;
+            }
+        }
+        ul{
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (min-width:769px){//PC
+    footer{
+        .footer{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:768px){//SP
+    footer{
+        background: $main-color-gray;
+        margin-top: 2rem;
+        p{
+            border-bottom: 2px solid black;
+            text-align: center;
+            width: 35%;
+            margin: .8rem auto;
+        }
+        .footer-profile{
+            list-style: none;
+            padding: 1rem;
+        }
+        .fixed-page{
+            text-align: center;
+            a{
+                text-align: center;
+                color: black;
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .share li {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 3px;
+        a{
+            height: 40px;
+        }
+    }
+
+    .share li i {
+        font-size: 1.3em;
+        padding-top: 3px;
+    }
+}
+
+/**
+**  投稿記事内のcss装飾
+**/
+.code{
+    background-color: $main-color-gray;
+    padding: 1rem;
+}
+//記事の小項目
+.index-title{
+    font-size: 1.5rem;
+    border-left: 5px solid $main-color-orange;
+    margin-top: 2rem;
+    padding: 3px 0 3px 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+//蛍光ペン風下線
+.pink-line{
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;
+}
+.blue_line{background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;}
+.yellow_line {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;}
+.pink_line_narrow{background:rgba(0, 0, 0, 0) linear-gradient(transparent 80%, #ffb2d8 0%) repeat scroll 0 0;}
+.blue_line_narrow {background:rgba(0, 0, 0, 0) linear-gradient(transparent 80%, #add6ff 0%) repeat scroll 0 0;}
+.yellow_line_narrow{background:rgba(0, 0, 0, 0) linear-gradient(transparent 80%, #ffff7f 0%) repeat scroll 0 0;}
+
+
+//目次
+.index{
+    background-color: $main-color-gray;
+    padding: 1rem;
+    line-height: 2rem;
+    a{
+        color: black;
+    }
+}
